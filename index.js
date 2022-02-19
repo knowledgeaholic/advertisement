@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 	
 	document.querySelectorAll(".code-block").forEach(e => e.classList.add('code-block-style'))
-	var callElement = document.querySelectorAll(".code-block iframe")
+	var callElement = document.querySelectorAll(".code-block")
 	function setCookie(cname, cvalue, exdays) {
 		  const d = new Date();
 		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
