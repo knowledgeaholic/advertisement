@@ -1,5 +1,8 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-	
+	document.querySelector("body").onclick = function(){
+		console.log("done")
+			
+	}
 	document.querySelectorAll(".code-block").forEach(e => e.classList.add('code-block-style'))
 	var callElement = document.querySelectorAll(".code-block")
 	function setCookie(cname, cvalue, exdays) {
