@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	}
 	for(var i = 0;i < callElement.length;i++ ){
 		callElement[i].onclick = function(){
-			setCookie("advertisement","yes",0.005)
+			setCookie("advertisement","yes",1)
 			callElement.forEach(e => e.remove());
 		}
 	}	
