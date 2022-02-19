@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+	
 	document.querySelectorAll(".code-block").forEach(e => e.classList.add('code-block-style'))
 	var callElement = document.querySelectorAll(".code-block iframe")
 	function setCookie(cname, cvalue, exdays) {
@@ -9,6 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	}
 	for(var i = 0;i < callElement.length;i++ ){
 		callElement[i].onclick = function(){
+			console.log("done")
 			setCookie("advertisement","yes",1)
 			callElement.forEach(e => e.remove());
 		}
