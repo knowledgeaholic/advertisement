@@ -1,23 +1,11 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-	document.querySelector("body").onclick = function(){
-		console.log("done")
-			
-	}
-	document.querySelectorAll(".code-block").forEach(e => e.classList.add('code-block-style'))
-	var callElement = document.querySelectorAll(".code-block")
+jQuery(document).ready(function($){
+	$(".code-block").remove()		
 	function setCookie(cname, cvalue, exdays) {
 		  const d = new Date();
 		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
 		  let expires = "expires="+ d.toUTCString();
 		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
-	for(var i = 0;i < callElement.length;i++ ){
-		callElement[i].onclick = function(){
-			console.log("done")
-			setCookie("advertisement","yes",1)
-			callElement.forEach(e => e.remove());
-		}
-	}	
 	function getCookie(cname) {
 	  let name = cname + "=";
 	  let decodedCookie = decodeURIComponent(document.cookie);
@@ -33,8 +21,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	  }
 	  return "";
 	}
-	console.log("cookie: " + getCookie("advertisement"))
 	if((getCookie("advertisement"))){
-		callElement.forEach(e => e.remove());
+		$('.code-block').remove();
 	}
+	$('.code-block iframe').iframeTracker({
+		blurCallback: function(event) {
+			setCookie("advertisement","yes",0.085)
+		},
+		outCallback: function(element, event) {
+			if((getCookie("advertisement"))){
+				$('.code-block').remove();
+			}
+		}
+	});
 });
