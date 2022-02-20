@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	$(".code-block").remove()		
+	$(".code-block").addClass('code-block-style')
 	function setCookie(cname, cvalue, exdays) {
 		  const d = new Date();
 		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
