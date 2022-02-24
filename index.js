@@ -26,7 +26,7 @@ jQuery(document).ready(function($){
 	}
 	$('.code-block iframe').iframeTracker({
 		blurCallback: function(event) {
-			setCookie("advertisement","yes",0.085)
+			setCookie("advertisement","yes",0.15)
 		},
 		outCallback: function(element, event) {
 			if((getCookie("advertisement"))){
