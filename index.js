@@ -61,8 +61,8 @@ jQuery(document).ready(function() {
     }, 8000);
 });
 setInterval(function() {
-    var elem = document.querySelectorAll(".code-block iframe").activeElement;
-    if (elem.tagName == 'IFRAME') {
+    var elem = document.activeElement;
+    if (elem.className == 'code-block') {
         if (elem) {
             var countnow = parseInt(aicpCookieGet(cookieName));
             if (!countnow) {
