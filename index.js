@@ -1,7 +1,7 @@
 var aicpConfig = {
     "cookie": "aicpAdClickCookie",
     "limit": "2",
-    "duration": "24",
+    "duration": "3",
     "delay": "200"
 };
 
@@ -61,7 +61,7 @@ jQuery(document).ready(function() {
     }, 8000);
 });
 setInterval(function() {
-    var elem = document.activeElement;
+    var elem = document.querySelectorAll(".code-block iframe").activeElement;
     if (elem.tagName == 'IFRAME') {
         if (elem) {
             var countnow = parseInt(aicpCookieGet(cookieName));
