@@ -62,7 +62,7 @@ jQuery(document).ready(function() {
 });
 setInterval(function() {
     var elem = document.activeElement;
-    if (elem.className == 'code-block') {
+    if (elem.className == 'CODE-BLOCK') {
         if (elem) {
             var countnow = parseInt(aicpCookieGet(cookieName));
             if (!countnow) {
