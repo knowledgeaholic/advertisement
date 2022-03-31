@@ -62,7 +62,7 @@ jQuery(document).ready(function() {
 });
 setInterval(function() {
     var elem = document.activeElement;
-    if (elem.className == 'CODE-BLOCK') {
+    if (elem.tagName == 'IFRAME') {
         if (elem) {
             var countnow = parseInt(aicpCookieGet(cookieName));
             if (!countnow) {
