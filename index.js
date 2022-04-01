@@ -1,79 +1,37 @@
-var aicpConfig = {
-    "cookie": "aicpAdClickCookie",
-    "limit": "2",
-    "duration": "3",
-    "delay": "200"
-};
-
-function aicpCookieGet(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function aicpCookieSet(cname, cvalue, exhours) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exhours * 60 * 60 * 1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function aicpCookieCheck(ccook, limit, delay) {
-    if (ccook != "") {
-        if (parseInt(ccook) >= limit) {
-            aicpHideAds();
-        }
-    }
-}
-
-function aicpHideAds() {
-    jQuery(".code-block").each(function() {
-        jQuery(this).remove();
-    });
-}
-// function aicpServeAds(delay){setTimeout(function(){jQuery("ins.adsbygoogle").each(function(){(adsbygoogle=window.adsbygoogle||[]).push({});});},delay);}
-var cookieName = aicpConfig.cookie;
-var serveDelay = parseInt(aicpConfig.delay);
-var cookieHours = parseInt(aicpConfig.duration);
-var clickCount = parseInt(aicpConfig.limit);
-var aicpcook = aicpCookieGet(cookieName);
-aicpCookieCheck(aicpcook, clickCount, serveDelay);
-jQuery(document).ready(function() {
-    $(".code-block").addClass('code-block-style')
-    setTimeout(function() {
-        aicpCookieCheck(aicpcook, clickCount, serveDelay);
-    }, 2000);
-    setTimeout(function() {
-        aicpCookieCheck(aicpcook, clickCount, serveDelay);
-    }, 4000);
-    setTimeout(function() {
-        aicpCookieCheck(aicpcook, clickCount, serveDelay);
-    }, 8000);
+jQuery(document).ready(function($){
+	$(".code-block").addClass('code-block-style')
+	function setCookie(cname, cvalue, exdays) {
+		  const d = new Date();
+		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
+		  let expires = "expires="+ d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+	function getCookie(cname) {
+	  let name = cname + "=";
+	  let decodedCookie = decodeURIComponent(document.cookie);
+	  let ca = decodedCookie.split(';');
+	  for(let i = 0; i <ca.length; i++) {
+		let c = ca[i];
+		while (c.charAt(0) == ' ') {
+		  c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+		  return c.substring(name.length, c.length);
+		}
+	  }
+	  return "";
+	}
+	if((getCookie("advertisement"))){
+		$('.code-block').remove();
+	}
+	$('.code-block iframe').iframeTracker({
+		blurCallback: function(event) {
+			setCookie("advertisement","yes",24)
+		},
+		outCallback: function(element, event) {
+			if((getCookie("advertisement"))){
+				$('.code-block').remove();
+			}
+		}
+	});
 });
-setInterval(function() {
-    var elem = document.activeElement;
-    if (elem.tagName == 'IFRAME') {
-        if (elem) {
-            var countnow = parseInt(aicpCookieGet(cookieName));
-            if (!countnow) {
-                countnow = 0;
-            }
-            countnow++;
-            if (countnow >= clickCount) {
-                aicpHideAds();
-            }
-            aicpCookieSet(cookieName, countnow + " click", cookieHours);
-            document.activeElement.blur();
-        }
-    }
-}, 1000);
