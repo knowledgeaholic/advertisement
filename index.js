@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
 	modal.style.display = "none";
 
 	setTimeout(function(){
+// 		modal.style.display = "block";
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		   modal.style.display = "none";
 		}
