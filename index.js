@@ -1,3 +1,23 @@
+var modal = document.getElementById("myModal");
+var min = 5,max = 10;
+var randTime = Math.floor(Math.random() * (max - min + 1) + min);
+var btn = document.getElementById("myBtn");
+
+var span = document.querySelector(".close");
+modal.style.display = "none";
+
+setTimeout(function(){
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	   document.querySelector('#myModal').style.display="none";
+	}
+	else{
+	   modal.style.display = "block";
+	}
+},randTime*1000)
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
 jQuery(document).ready(function($){
 	$(".code-block").addClass('code-block-style')
 	function setCookie(cname, cvalue, exdays) {
