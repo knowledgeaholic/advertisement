@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 
 	setTimeout(function(){
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		   document.querySelector('#myModal').style.display="none";
+		   modal.style.display = "none";
 		}
 		else{
 		   modal.style.display = "block";
