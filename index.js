@@ -7,15 +7,15 @@ jQuery(document).ready(function($){
 	var span = document.querySelector(".close");
 	modal.style.display = "none";
 
-// 	setTimeout(function(){
+	setTimeout(function(){
 // 		modal.style.display = "block";
-// 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-// 		   modal.style.display = "none";
-// 		}
-// 		else{
-// 		   modal.style.display = "block";
-// 		}
-// 	},randTime*1000)
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		   modal.style.display = "none";
+		}
+		else{
+		   modal.style.display = "block";
+		}
+	},randTime*1000)
 
 	span.onclick = function() {
 	  modal.style.display = "none";
