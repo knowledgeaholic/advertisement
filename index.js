@@ -8,13 +8,13 @@ jQuery(document).ready(function($){
 	modal.style.display = "none";
 
 	setTimeout(function(){
-// 		modal.style.display = "block";
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		   modal.style.display = "none";
-		}
-		else{
-		   modal.style.display = "block";
-		}
+		modal.style.display = "block";
+// 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+// 		   modal.style.display = "none";
+// 		}
+// 		else{
+// 		   modal.style.display = "block";
+// 		}
 	},randTime*1000)
 
 	span.onclick = function() {
