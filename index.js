@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 
 	var span = document.querySelector(".close");
 	modal.style.display = "none";
-
+//
 	setTimeout(function(){
 		modal.style.display = "block";
 // 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
