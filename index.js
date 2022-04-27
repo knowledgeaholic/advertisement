@@ -48,11 +48,14 @@ jQuery(document).ready(function($){
 	$('.code-block iframe').iframeTracker({
 		blurCallback: function(event) {
 			setCookie("advertisement","yes",24)
-		},
-		outCallback: function(element, event) {
-			if((getCookie("advertisement"))){
+			setTimeout(function(){
 				$('.code-block').remove();
-			}
-		}
+			},1000)
+		},
+// 		outCallback: function(element, event) {
+// 			if((getCookie("advertisement"))){
+// 				$('.code-block').remove();
+// 			}
+// 		}
 	});
 });
