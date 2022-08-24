@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+	alert("Hello")
 	var modal = document.getElementById("myModal");
 	var min = 5,max = 7;
 	var randTime = Math.floor(Math.random() * (max - min + 1) + min);
