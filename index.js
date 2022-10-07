@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 // 	console.log("Hello")
 	var modal = document.getElementById("myModal");
-	var min = 5,max = 7;
+	var min = 5,max = 10;
 	var randTime = Math.floor(Math.random() * (max - min + 1) + min);
 	var btn = document.getElementById("myBtn");
 
@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 	span.onclick = function() {
 	  modal.style.display = "none";
 	}
-	$(".code-block").addClass('code-block-style')
+// 	$(".code-block").addClass('code-block-style')
 	function setCookie(cname, cvalue, exdays) {
 		  const d = new Date();
 		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
