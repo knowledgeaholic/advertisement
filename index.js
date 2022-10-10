@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 // 	console.log("Hello")
 	var modal = document.getElementById("myModal");
-	var min = 5,max = 10;
+	var min = 5,max = 8;
 	var randTime = Math.floor(Math.random() * (max - min + 1) + min);
 	var btn = document.getElementById("myBtn");
 
