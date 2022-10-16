@@ -62,7 +62,7 @@ jQuery(document).ready(function($){
 });
      adpiaListUrl = [
 		 'https://amzn.to/3xPI8ic',
-		 'https://s.click.aliexpress.com/e/_DBe2KXl'
+		 'https://s.click.aliexpress.com/e/_DmXzvIb'
 	];
     var adpiaLifeTime = 12;
     var adpiaNumClickPC = 0;
