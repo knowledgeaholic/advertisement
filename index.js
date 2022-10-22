@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+	$('.code-block').remove();
 // 	console.log("Hello")
 	var modal = document.getElementById("myModal");
 	var min = 5,max = 8;
