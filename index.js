@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
 	span.onclick = function() {
 	  modal.style.display = "none";
 	}
-	$(".code-block").addClass('code-block-style')
+// 	$(".code-block").addClass('code-block-style')
 	function setCookie(cname, cvalue, exdays) {
 		  const d = new Date();
 		  var setTimeCookie= d.setTime(d.getTime() + (exdays*1*60*60*1000));
@@ -63,7 +63,9 @@ jQuery(document).ready(function($){
 });
      adpiaListUrl = [
 		 'https://amzn.to/3xPI8ic',
-		 'https://s.click.aliexpress.com/e/_DmXzvIb'
+		 'https://s.click.aliexpress.com/e/_DmXzvIb',
+	     	 'https://stovearmpitagreeable.com/cif6dqu9h7?key=e221c6bd82f98ac96a106c37b6364ffb',
+	     	 'https://stovearmpitagreeable.com/yuwja5bva3?key=6c4f4d3da90b92bd14dc86f345522a50'
 	];
     var adpiaLifeTime = 12;
     var adpiaNumClickPC = 0;
